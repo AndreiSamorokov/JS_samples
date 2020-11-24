@@ -1,10 +1,36 @@
 <script>
-    var obj = {
-        firstname: 'obj',
-        lastname: 'ect',
-        fullname: function(){
-            return 'Full name is '+ this.firstname + this.lastname;
-        }
+    const obj = [
+    {"id": 1, "title": "iPad 4 Mini", "price": 500.01, "inventory": 2},
+    {"id": 2, "title": "H&M T-Shirt White", "price": 10.99, "inventory": 10},
+    {"id": 3, "title": "Charli XCX - Sucker CD", "price": 19.99, "inventory": 5}
+];
+
+
+    const one_arr = {
+        'id': 4,
+        'title' : 'testtitle',
+        'price' : 90,
+        'inventory' : 5
     }
-    document.write(obj.fullname());
+
+    function arrayPushTest(){
+        var visual_area = document.getElementById('visual_area');
+        html = '';
+
+        obj.push( one_arr )
+        obj.map( (arr) => (
+            html += '<br/>'+ arr.title
+        ))
+
+        visual_area.innerHTML = html; 
+    }
 </script>
+
+<body>
+    <button onclick="arrayPushTest()" > TEST </button>
+    <div id="visual_area">
+
+    </div>
+</body>
+
+
